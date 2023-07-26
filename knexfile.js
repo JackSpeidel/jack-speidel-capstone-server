@@ -1,9 +1,6 @@
-// Update with your config settings.
 const dotenv = require('dotenv')
 
-/**
- * @type { Object.<string, import("knex").Knex.Config> }
- */
+
 module.exports = {
 
   development: {
@@ -16,5 +13,4 @@ module.exports = {
       database : 'TBD'
     }
   }
-
 };
