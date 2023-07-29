@@ -4,7 +4,7 @@ const knex = require('knex')(require('../knexfile'));
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// post /api/capstoneUsers/register
+// post /api/users/register
 // user registration
 router.post('/register', async (req, res) => {
     // deconstruct data from the user request
@@ -36,7 +36,7 @@ router.post('/register', async (req, res) => {
     }
 });
 
-// post /api/capstoneUsers/login
+// post /api/users/login
 // login & JWT response
 router.post('/login', async (req, res) => {
     // deconstruct data from the user request
@@ -69,7 +69,7 @@ router.post('/login', async (req, res) => {
     res.json({ token });
 });
 
-// post /api/capstoneUsers/current
+// post /api/users/current
 // get request on logged-in user
 
 router.get ('/current', async (req, res) => {
