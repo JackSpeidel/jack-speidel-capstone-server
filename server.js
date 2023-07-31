@@ -14,6 +14,7 @@ app.use(cors());
 // Routing
 app.use('/api/users', userRoute);
 // app.use('/api/articles', articlesRoute);
+// app.use('/api/posts', postsRoute);
 
 // Listen - Keep at Bottom
 app.listen(port, () => {
