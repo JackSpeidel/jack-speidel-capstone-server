@@ -69,27 +69,6 @@ router.post('/login', async (req, res) => {
     res.json({ token });
 });
 
-// Middleware checking the authorization token
-const authorize = (req, res, next) => {
-    // Checking authorization header
-    if (!req.headers.authorization) {
-        return res.status(401).json({
-            success: false,
-            message: "This route requires an authorization header." 
-        });
-    }
-
-    if (req.headers.authorization.indexOf('Bearer') === -1) {
-        return res.status(401).json({
-            success: false,
-            message: 'The authorization token is invalid'
-        });
-    }
-
-}
-
-
-
 
 // post /api/users/current
 // get request on logged-in user
