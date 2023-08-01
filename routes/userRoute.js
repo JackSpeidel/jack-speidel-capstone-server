@@ -12,7 +12,7 @@ router.post('/register', async (req, res) => {
 
     // info entry validation
     if (!first_name || !last_name || !email || !password) {
-        return res.status(400).send('Please enter the required fields.');
+        return res.status(400).send('😳 Please enter the required fields 😳');
     }
 
     // creates encrypted password
@@ -39,12 +39,13 @@ router.post('/register', async (req, res) => {
 // post /api/users/login
 // login & JWT response
 router.post('/login', async (req, res) => {
+    
     // deconstruct data from the user request
     const { email, password } = req.body;
-
+    
     // user validation
     if(!email || !password) {
-        return res.status(400).send('Please enter your information into the required fields');
+        return res.status(400).send('😳 Please enter your information into the required fields 😳');
     }
 
     // find the user in the database
