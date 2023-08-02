@@ -6,6 +6,8 @@ const jwt = require('jsonwebtoken');
 // post /api/posts/post
 router.post('/post', async (req, res) => {
     
+    console.log('endpoint hit')
+
     if(!req.headers.authorization) {
         return res.status(401).send('Please login to comment');
     }
@@ -36,7 +38,15 @@ router.post('/post', async (req, res) => {
 // get /api/posts/
 // get all posts
 router.get('/', async (req, res) => {
-    console.log(req.body);
+
+    res.status(200).send(
+        await knex('posts').join('users', 'users.id', '=', 'posts.user_id').select('posts.*', 'users.first_name', 'users.last_name', 'users.user_photo')
+    );
+
 })
+
+
+
+
 
 module.exports = router;

@@ -23,7 +23,8 @@ router.post('/register', async (req, res) => {
         first_name,
         last_name,
         email,
-        password: hashedPassword
+        password: hashedPassword,
+        user_photo: 'https://static.vecteezy.com/ti/gratis-vector/p3/7319933-black-avatar-person-icons-user-profile-icon-vector.jpg',
     };
 
     // connects user info to database
